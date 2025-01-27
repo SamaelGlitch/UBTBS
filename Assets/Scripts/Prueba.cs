@@ -7,6 +7,8 @@ public class Prueba : MonoBehaviour
     public GameManager gameManager;
 
     public TextMeshProUGUI preciotext;
+    public SeleccionJugador seleccionJugador;
+    public TurnoCliente turnoCliente;
     [SerializeField] private int precio = 0;
 
     [SerializeField] private int currentprecio = 0;
