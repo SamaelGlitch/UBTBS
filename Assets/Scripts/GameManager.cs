@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -19,11 +20,11 @@ public class GameManager : MonoBehaviour
         {
             if (meta < price)
             {
-                Debug.Log("GANASTE :DDDDDD");
+                SceneManager.LoadScene("Winner");
             }
             else
             {
-                Debug.Log("PERDISTE XDDDD");
+                SceneManager.LoadScene("Lose");
             }
         }
         else 

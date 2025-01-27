@@ -8,7 +8,7 @@ public class Opcion
 {
     public string texto; // Texto descriptivo de la opción
     public int valor;    // Valor asociado para comparación
-    
+
 }
 
 public class TurnoCliente : MonoBehaviour
@@ -25,7 +25,8 @@ public class TurnoCliente : MonoBehaviour
     [SerializeField] private TextoCliente textoCliente; // Referencia al script que muestra el texto
     [SerializeField] private SeleccionJugador seleccionJugador; // Referencia al script de selección del jugador
 
-    [SerializeField] private List<Opcion> sabores = new List<Opcion>
+    [SerializeField]
+    private List<Opcion> sabores = new List<Opcion>
     {
         new Opcion { texto = "Spices and milk will make me complete,", valor = 1 },
         new Opcion { texto = "A cozy hug served in a cup,", valor = 1 },
@@ -43,7 +44,8 @@ public class TurnoCliente : MonoBehaviour
         new Opcion { texto = "Like sugary clouds served in a cup,", valor = 7 },
     };
 
-    [SerializeField] private List<Opcion> bobas = new List<Opcion>
+    [SerializeField]
+    private List<Opcion> bobas = new List<Opcion>
     {
         new Opcion { texto = "and something sweet and sticky, that adds delight", valor = 1 },
         new Opcion { texto = "covered in sugar, its hard to resist", valor = 1 },
@@ -127,10 +129,21 @@ public class TurnoCliente : MonoBehaviour
             audioSource.clip = sonidoFallo; // Asignar el sonido de fallo
             audioSource.Play(); // Reproducir el sonido
         }
+
+        // Verificar si dos GameObjects específicos están habilitados
+        GameObject objeto1 = GameObject.Find("Booba1v");
+        GameObject objeto2 = GameObject.Find("TeBebida1");
+
+        if (objeto1 != null && objeto2 != null && objeto1.activeSelf && objeto2.activeSelf)
+        {
+            Debug.Log("Ambos GameObjects están habilitados. Eliminando el objeto raíz...");
+            Destroy(gameObject); // Eliminar el GameObject raíz de este script
+        }
     }
 
+
     public string GetTipo()
-{
-    return tipo; // Devuelve "humano" o "pez"
-}
+    {
+        return tipo; // Devuelve "humano" o "pez"
+    }
 }
