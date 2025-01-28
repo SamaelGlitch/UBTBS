@@ -10497,7 +10497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoRestante: 300
-  velocidadContador: 20
+  velocidadContador: 10
   textoContador: {fileID: 670538084}
 --- !u!4 &1750779303
 Transform:
